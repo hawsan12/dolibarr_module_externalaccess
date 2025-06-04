@@ -251,3 +251,13 @@ VirtualHostsExtraFields = Attributs supplémentaires Hôte virtuel
 VirtalHostMapping = Hôtes virtuels
 EAVirtualHosts = Hôtes virtuels
 invalidDomain = Nom de domaine invalide
+
+ViewProducts=Produits
+ViewProductsDesc=Consultez le catalogue de produits
+Cart=Panier
+CartDesc=Gérez votre panier
+Checkout=Commander
+CheckoutDesc=Validez votre panier
+AddToCart=Ajouter au panier
+CartEmpty=Votre panier est vide
+OrderCreated=Commande créée

@@ -52,6 +52,12 @@ if(empty($reshook)){
         printService($langs->trans('Invoices'),'fa-file-text',$link); // desc : $langs->trans('InvoicesDesc')
     }
 
+    $link = $context->getControllerUrl('products');
+    printService($langs->trans('ViewProducts'),'fa-shopping-cart',$link);
+
+    $link = $context->getControllerUrl('cart');
+    printService($langs->trans('Cart'),'fa-cart-arrow-down',$link);
+
     if(getDolGlobalInt("EACCESS_ACTIVATE_TICKETS") && isModEnabled('ticket') && $user->hasRight('externalaccess', 'view_tickets')){
         $link = $context->getControllerUrl('tickets');
         printService($langs->trans('Tickets'),'fa-ticket',$link);
