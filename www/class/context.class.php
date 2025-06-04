@@ -147,10 +147,13 @@ class Context
 		$this->addControllerDefinition('projects', $defaultControllersPath.'projects.controller.php', 'ProjectsController');
 		$this->addControllerDefinition('tasks', $defaultControllersPath.'tasks.controller.php', 'TasksController');
 		$this->addControllerDefinition('expeditions', $defaultControllersPath.'expeditions.controller.php', 'ExpeditionsController');
-		$this->addControllerDefinition('supplier_invoices', $defaultControllersPath.'supplier_invoices.controller.php', 'SupplierInvoicesController');
-		$this->addControllerDefinition('tickets', $defaultControllersPath.'tickets.controller.php', 'TicketsController');
+                $this->addControllerDefinition('supplier_invoices', $defaultControllersPath.'supplier_invoices.controller.php', 'SupplierInvoicesController');
+                $this->addControllerDefinition('tickets', $defaultControllersPath.'tickets.controller.php', 'TicketsController');
+                $this->addControllerDefinition('products', $defaultControllersPath.'products.controller.php', 'ProductsController');
+                $this->addControllerDefinition('cart', $defaultControllersPath.'cart.controller.php', 'CartController');
+                $this->addControllerDefinition('checkout', $defaultControllersPath.'checkout.controller.php', 'CheckoutController');
 
-		// Appel des triggers
+                // Appel des triggers
 		include_once DOL_DOCUMENT_ROOT . '/core/class/interfaces.class.php';
 		$interface=new Interfaces($db);
 		$interface->run_triggers('externalAccessInitController', $this, $user, $langs, $conf);
