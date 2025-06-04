@@ -21,6 +21,8 @@ external_access_userinfos_edit= Modifier ses informations personnelles
 external_access_projets = Consulter ses projets
 external_access_tasks = Consulter les tâches de ses projets
 external_access_supplier_invoices= Consulter ses factures fournisseurs
+external_access_products= Consulter les produits
+PermissionExternalAccessProducts=Consulter les produits
 
 # MENU
 TopMenuexternalaccess=Portail client
