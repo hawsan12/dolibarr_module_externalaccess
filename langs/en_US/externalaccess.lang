@@ -31,6 +31,8 @@ external_access_expeditions = can view shipments
 external_access_tickets = can view tickets 
 external_access_projets = can view projects
 external_access_userinfos_edit = can modify personal information
+external_access_products = can view products
+PermissionExternalAccessProducts = View products
 
 # MENU 
 TopMenuexternalaccess = External Access

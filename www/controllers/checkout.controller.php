@@ -46,6 +46,8 @@ class CheckoutController extends Controller
         $context = Context::getInstance();
         if (!$context->controllerInstance->checkAccess()) { return $this->display404(); }
 
+        $context->lines = $this->getLines();
+
         $this->loadTemplate('header');
         $this->loadTemplate('checkout');
         $this->loadTemplate('footer');
@@ -53,8 +55,20 @@ class CheckoutController extends Controller
 
     public function getLines()
     {
-        require_once __DIR__.'/cart.controller.php';
-        $cart = new CartController();
-        return $cart->getLines();
+        global $db;
+        dol_include_once('product/class/product.class.php');
+        $lines = array();
+        if (!empty($_SESSION['cart_lines'])) {
+            foreach ($_SESSION['cart_lines'] as $pid => $qty) {
+                $prod = new Product($db);
+                if ($prod->fetch($pid) > 0) {
+                    $line = new stdClass();
+                    $line->product = $prod;
+                    $line->qty = $qty;
+                    $lines[$pid] = $line;
+                }
+            }
+        }
+        return $lines;
     }
 }

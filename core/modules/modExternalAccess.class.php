@@ -246,6 +246,12 @@ class modExternalAccess extends DolibarrModules
 		$this->rights[$r][4] = 'view_tasks';				// In php code, permission will be checked by test if ($user->hasRight('permkey', 'level1', 'level2'))
 		$this->rights[$r][5] = '';				// In php code, permission will be checked by test if ($user->hasRight('permkey', 'level1', 'level2'))
 		$r++;
+		$this->rights[$r][0] = $this->numero . $r; // Permission id (unique)
+		$this->rights[$r][1] = 'external_access_products'; // Permission label
+		$this->rights[$r][3] = 0; // Default for new user
+		$this->rights[$r][4] = 'view_products'; // Permission code used in controllers
+                $this->rights[$r][5] = '';
+		$r++;
 
 		// Main menu entries
 		$this->menu = array();			// List of menus to add
